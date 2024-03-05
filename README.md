@@ -2,6 +2,14 @@
 
 Simple encryption in NodeJS.
 
+## Install
+
+Install with [npm](https://www.npmjs.com/):
+
+```sh
+$ npm install --save @salamtam/ncrypt-js
+```
+
 ## Usage
 
 ```js

@@ -1,5 +1,5 @@
 {
-  "name": "ncrypt",
+  "name": "@salamtam/ncrypt-js",
   "version": "0.0.1",
   "description": "simple encryption in NodeJS",
   "main": "index.js",
