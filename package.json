@@ -1,0 +1,30 @@
+{
+  "name": "ncrypt",
+  "version": "0.0.1",
+  "description": "simple encryption in NodeJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest -o ./test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/salamtamp/ncrypt-js.git"
+  },
+  "keywords": [
+    "encrypt",
+    "decrypt",
+    "aes"
+  ],
+  "author": "Salamtam (https://github.com/salamtam)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/salamtamp/ncrypt-js/issues"
+  },
+  "homepage": "https://github.com/salamtamp/ncrypt-js#readme",
+  "dependencies": {
+    "crypto": "^1.0.1"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
