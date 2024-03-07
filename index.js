@@ -1,7 +1,5 @@
 const crypto = require('crypto');
 
-const fixedIV = crypto.randomBytes(16);
-
 function PKCS7Padding(data, blockSize) {
   const padding = blockSize - (data.length % blockSize);
   const padText = Buffer.alloc(padding, padding);
@@ -20,14 +18,16 @@ function PKCS7UnPadding(data) {
 }
 
 function EncryptAES(text, key) {
-  const cipher = crypto.createCipheriv('aes-256-cbc', key, fixedIV);
+  const iv = key.slice(0, 16);
+  const cipher = crypto.createCipheriv('aes-256-cbc', key, iv);
   let encrypted = cipher.update(PKCS7Padding(Buffer.from(text), 16));
   encrypted = Buffer.concat([encrypted, cipher.final()]);
   return encrypted.toString('base64');
 }
 
 function DecryptAES(ciphertext, key) {
-  const decipher = crypto.createDecipheriv('aes-256-cbc', key, fixedIV);
+  const iv = key.slice(0, 16);
+  const decipher = crypto.createDecipheriv('aes-256-cbc', key, iv);
   const encryptedText = Buffer.from(ciphertext, 'base64');
   let decrypted = decipher.update(encryptedText);
   decrypted = Buffer.concat([decrypted, decipher.final()]);
